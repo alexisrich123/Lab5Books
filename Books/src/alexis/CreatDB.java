@@ -43,18 +43,18 @@ public class CreatDB {
 
 
 
-	/*private static void sumofpages(Connection conn) {
+	private static void sumofpages(Connection conn) {
 
 	try {
 			Statement stmt=conn.createStatement();
-			stmt.executeQuery("SELECT NumberOfPages SUM";
+			stmt.executeQuery("FROM BOOKS SELECT NumberOfPages SUM");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-*/
+
 
 
 
@@ -66,7 +66,12 @@ public class CreatDB {
 			stmt.execute("CREATE TABLE BOOKS("+"Title CHAR(35),"+"Author CHAR(40),"+
 			"Genre CHAR(20),"+" YearPublished INTEGER,"+" NumberOfPages INTEGER"+")");
 			stmt.executeQuery("INSERT INTO BOOKS VALUES('Hamlet', 'Shakespeare','tragedy',1599,120)");
-			System.out.println("A BOOK WAS INSRETED");
+			
+			stmt.executeQuery("INSERT INTO BOOKS VALUES('I Win!', 'U.Lose','tragedy',2011,35)");
+			stmt.executeQuery("INSERT INTO BOOKS VALUES('April Fool', 'Sue Prize','comedy',2095,0)");
+			stmt.executeQuery("INSERT INTO BOOKS VALUES('Golly Gosh', 'G.Whiz',thriller'',2001,9999)");
+			stmt.executeQuery("INSERT INTO BOOKS VALUES('Come on in', 'Doris Open','tragedy',2016,1128)");
+			System.out.println(" Your BOOK is in our inventory ");
 		}
 		catch(SQLException ex){
 			System.out.println("ERROR:"+"Book was no put away");
