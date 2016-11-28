@@ -1,6 +1,0 @@
-/*C4*/SET SCHEMA PUBLIC
-DROP TABLE BOOKS
-CREATE TABLE BOOKS(Title CHAR(35),Author CHAR(40),Genre CHAR(20), YearPublished INTEGER, NumberOfPages INTEGER)
-INSERT INTO BOOKS VALUES('Hamlet                             ','Shakespeare                             ','tragedy             ',1599,120)
-COMMIT
-DISCONNECT
