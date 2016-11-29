@@ -69,12 +69,13 @@ public class CreatDB {
 			
 			stmt.executeQuery("INSERT INTO BOOKS VALUES('I Win!', 'U.Lose','tragedy',2011,35)");
 			stmt.executeQuery("INSERT INTO BOOKS VALUES('April Fool', 'Sue Prize','comedy',2095,0)");
-			stmt.executeQuery("INSERT INTO BOOKS VALUES('Golly Gosh', 'G.Whiz',thriller'',2001,9999)");
+			stmt.executeQuery("INSERT INTO BOOKS VALUES('Golly Gosh', 'G.Whiz','thriller',2001,9999)");
 			stmt.executeQuery("INSERT INTO BOOKS VALUES('Come on in', 'Doris Open','tragedy',2016,1128)");
 			System.out.println(" Your BOOK is in our inventory ");
 		}
 		catch(SQLException ex){
 			System.out.println("ERROR:"+"Book was no put away");
+			ex.printStackTrace();
 		}
 	}
 

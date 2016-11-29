@@ -18,7 +18,7 @@ public class PutAway {
 		final String DB_URL = "jdbc:hsqldb:file:BooksDB/Books";
 		Connection conn= DriverManager.getConnection(DB_URL);
 		
-		do{
+		if(I.equals(uc)){
 		System.out.println("Tell me the title of your book.");
 		String title=key.nextLine();
 		System.out.println("Tell me the book's Author.");
@@ -31,12 +31,12 @@ public class PutAway {
 		String pa=key.nextLine();
 		
 	
-			String sql="INSERT INTO BOOK"
+			String sql="INSERT INTO BOOKS"
 									+"(Title,Author,Genre, YearPublished, NumberOfPages)"
 									+"VALUES"
 									+"(?,?,?,?,?);";
 			PreparedStatement stmt= conn.prepareStatement(sql);
-			stmt.executeUpdate(sql);
+
 			 stmt.setString(1, title);
 			 stmt.setString(2, au);
 			 stmt.setString(3, ge);
@@ -47,17 +47,19 @@ public class PutAway {
 			System.out.println("You have Inserted a book");
 			System.out.println("press i to inserted a book , d to delete a book, or x to exit t or anything ");
 			uc=key.nextLine().toUpperCase();
-		}while(uc.equals(I));
-		do{
+		}
+		else if((D.equals(uc))){
 			System.out.println("tell me what book you would like to delete");
 			deleteByTitle(new Scanner(System.in).nextLine(),conn);
 			
-		}while(uc.equals(D));
-		do{
+		}
+		else{
+			System.out.println("bye");
+			System.exit(0);
 			
 		}
-		while(!uc.equals(D)||!uc.equals(I));
-		System.exit(0);
+	
+	
 		
 	}
 
