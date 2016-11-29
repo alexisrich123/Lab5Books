@@ -1,6 +1,6 @@
 package alexis;
 
-import java.awt.event.ActionEvent;
+
 import java.util.Optional;
 
 import javafx.fxml.FXML;
@@ -55,13 +55,14 @@ public class BDFx {
 	@SuppressWarnings("restriction")
 	
 	@FXML
-    void rightclick(MouseEvent event, ActionEvent type) {
-    	if(event.getButton()==MouseButton.SECONDARY){
+void rightclick() {
+    	//if(event.getButton()==MouseButton.SECONDARY){
     		//making
-    		Button b=(Button)type.getSource();
+    		//Button b=(Button)event.getSource();
     		Alert bookinfo= new Alert(AlertType.CONFIRMATION);
     		bookinfo.setHeaderText("Tell me the title of your book,");
     		bookinfo.setTitle("change book Book");
+    		bookinfo.setContentText(null);
     		// making the table
     		GridPane table= new GridPane();
     		table.setHgap(10);
@@ -69,7 +70,7 @@ public class BDFx {
     		table.setPadding(new Insets(20,150,0,10));
     		TextField bookin= new TextField();
     		// puting info in alert
-    		bookin.setText(b.getText());
+    		//bookin.setText(b.getText());
     		table.add(bookin,0,0);
     		bookinfo.getDialogPane().setContent(table);
     		Optional<ButtonType>result=bookinfo.showAndWait();
@@ -78,7 +79,7 @@ public class BDFx {
     				bookinfo.setTitle(bookin.getText());
     			}
     		}
-    	}
+    	//}
 
     }
 
